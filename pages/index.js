@@ -3,8 +3,6 @@ import Link from 'next/link';
 import Head from '../components/head';
 import GoogleMap from '../components/googlemap';
 
-const mapLoaded = () => {};
-
 export default class extends Component {
   constructor(props) {
     super(props);
@@ -21,9 +19,7 @@ export default class extends Component {
         },
       ],
       center: { lat: 37.792015, lng: -122.401695 },
-      loadedPoints: false,
     };
-    this._loadedPoints = false;
   }
 
   componentDidMount() {
