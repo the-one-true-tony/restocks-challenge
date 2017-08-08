@@ -1,0 +1,14 @@
+{
+  "name": "whats-open",
+  "scripts": {
+    "dev": "next -H localhost.restocksapp.com",
+    "build": "next build",
+    "start": "next start -H localhost.restocksapp.com"
+  },
+  "dependencies": {
+    "next": "3.0.1-beta.21",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-google-maps": "next"
+  }
+}
