@@ -5,6 +5,7 @@ export default class extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      data: {},
       showTooltip: false,
     };
   }
@@ -14,7 +15,11 @@ export default class extends Component {
   }
 
   render() {
-    const { content, position, defaultAnimation } = this.props;
+    const { content, position, filters, rating, defaultAnimation } = this.props;
+    let stars;
+    if(rating !== undefined){
+      stars = (<span>Rating: {rating}</span>);
+    }
     return (
       <Marker
         position={position}
@@ -24,9 +29,15 @@ export default class extends Component {
         {this.state.showTooltip &&
           <InfoWindow onCloseClick={this.onClick.bind(this)}>
             <div>
-              {content}
+              <span>{content}</span><br/>
+              {stars}
             </div>
           </InfoWindow>}
+          <style jsx>{`
+              .hidden {
+                visibility: false;
+              }
+              `}</style>
       </Marker>
     );
   }

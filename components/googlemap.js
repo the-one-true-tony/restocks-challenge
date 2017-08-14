@@ -19,12 +19,12 @@ const SimpleMap = withGoogleMap(props =>
     onClick={props.onMapClick}
   >
     {props.markers.map((marker, index) =>
-      <Marker key={marker.key} {...marker} />
+      <Marker key={marker.key} filters={props.filters} {...marker} />
     )}
   </GoogleMap>
 );
 
-export default ({ onMapLoad, markers, center }) => {
+export default ({ onMapLoad, markers, center, filters }) => {
   return (
     <SimpleMap
       containerElement={
@@ -38,6 +38,7 @@ export default ({ onMapLoad, markers, center }) => {
       mapElement={<div style={{ height: `100%` }} />}
       onMapLoad={onMapLoad}
       center={center}
+      filters ={filters}
       onMapClick={() => {}}
       markers={markers}
       onMarkerRightClick={() => {}}
